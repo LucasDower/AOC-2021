@@ -81,11 +81,8 @@ void part_two()
 
     for (int i = 0; i < P2_DAYS; ++i)
     {
-        unsigned long long new_6_fish = timers[0]; // all 0-fish become 6-fish
-
         std::rotate(&timers[0], &timers[0] + 1, &timers[9]);
-        timers[6] += new_6_fish;
-        timers[8] = new_6_fish;
+        timers[6] += timers[8];
     }
 
     unsigned long long count_fish = 0;
